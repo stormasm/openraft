@@ -14,7 +14,9 @@ pub struct Opt {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    console_subscriber::init();
     // Setup the logger
+    /*
     tracing_subscriber::fmt()
         .with_target(true)
         .with_thread_ids(true)
@@ -22,7 +24,7 @@ async fn main() -> std::io::Result<()> {
         .with_ansi(false)
         .with_env_filter(EnvFilter::from_default_env())
         .init();
-
+        */
     // Parse the parameters passed by arguments.
     let options = Opt::parse();
 
