@@ -2,7 +2,7 @@
 
 set -o errexit
 
-cargo build
+RUSTFLAGS="--cfg tokio_unstable" cargo build
 
 kill_all() {
     SERVICE='raft-key-value-rocks'
