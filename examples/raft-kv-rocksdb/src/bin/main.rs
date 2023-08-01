@@ -1,6 +1,6 @@
 use clap::Parser;
 use raft_kv_rocksdb::start_example_raft_node;
-use tracing_subscriber::EnvFilter;
+//use tracing_subscriber::EnvFilter;
 
 #[derive(Parser, Clone, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -19,9 +19,7 @@ pub struct Opt {
 async fn main() -> std::io::Result<()> {
     // Setup the logger
     tracing_subscriber::fmt()
-        .with_target(true)
-        .with_thread_ids(true)
-        .with_level(true)
+        .without_time()
         .with_ansi(false)
         .with_env_filter("openraft::engine::engine_impl=info")
         .init();
