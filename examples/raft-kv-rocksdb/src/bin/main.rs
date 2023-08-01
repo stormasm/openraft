@@ -23,7 +23,7 @@ async fn main() -> std::io::Result<()> {
         .with_thread_ids(true)
         .with_level(true)
         .with_ansi(false)
-        .with_env_filter(EnvFilter::from_default_env())
+        .with_env_filter("openraft::engine::engine_impl=info")
         .init();
 
     // Parse the parameters passed by arguments.
